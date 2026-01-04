@@ -1,0 +1,21 @@
+lane :test do
+  build_path = "./build/test.ipa.zip"     # Path to the build artifact to upload to OneTrust.
+  client_id = "12345"                     # OneTrust client credential identifier.
+  client_secret = "12345"                 # OneTrust client credential secret.
+  environment = "app-eu"                  # OneTrust environment subdomain used to build the base URL.
+  webhook_id = "3245345lertokrto34k5o4"   # OneTrust Integration webhook identifier.
+  app_id = "1231234234234"                # Optional: Existing OneTrust mobile application ID.
+  app_name = "Test app"                   # Optional: Mobile application name.
+  platform = "IOS"                        # Target platform for the uploaded build. Allowed values: IOS, ANDROID.
+
+  ovo_onetrust_scan_build(
+    build_path: build_path,
+    client_id: client_id,
+    client_secret: client_secret,
+    environment: environment,
+    webhook_id: webhook_id,
+    app_id: app_id,
+    app_name: app_name,
+    platform: platform
+  )
+end
